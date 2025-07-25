@@ -1,10 +1,10 @@
 # Loan Approval Prediction Using Machine Learning
 
-## Project Overview
+## 📌 Project Overview
 
-This project applies five different machine learning algorithms to predict whether a loan should be approved for a customer based on their personal and financial data. The goal is to compare these models' performances and select the best one for accurate and efficient loan approval prediction.
+This project applies five different machine learning algorithms to predict whether a loan should be approved for a customer based on their personal and financial data. The objective is to compare the performance of these models and select the most accurate and efficient one for loan approval prediction.
 
-## Models Used
+## 🧠 Models Used
 
 - Logistic Regression  
 - Support Vector Classifier (SVC)  
@@ -12,42 +12,47 @@ This project applies five different machine learning algorithms to predict wheth
 - Deep Dense Neural Network with Batch Normalization  
 - Simple LSTM  
 
-## Dataset
+## 📊 Dataset
 
-The dataset includes customer details relevant to loan approval, such as income, loan amount, credit history, and more. Identifiers like `Loan_ID` are dropped before modeling as they do not contribute to prediction.
+The dataset contains customer details relevant to loan approval, including income, loan amount, credit history, and more. Irrelevant identifiers such as `Loan_ID` are dropped during preprocessing as they do not contribute to prediction.
 
-## Data Preprocessing
+## ⚙️ Data Preprocessing
 
-- Dropped irrelevant columns (`Loan_ID`) and saved test IDs for result mapping.  
-- Checked for missing values and imputed them using mode for categorical features and median for numerical features.  
-- Applied log transformation on skewed features (e.g., `LoanAmount`) to reduce skewness and mitigate outliers.  
-- Encoded categorical variables using `LabelEncoder`.  
-- Split data into training and validation sets (75% train, 25% validation).  
-- Normalized feature data to prepare for model input.
+- Dropped irrelevant columns (`Loan_ID`)  
+- Handled missing values:  
+  - Mode imputation for categorical features  
+  - Median imputation for numerical features  
+- Applied log transformation to skewed features (e.g., `LoanAmount`)  
+- Encoded categorical variables using `LabelEncoder`  
+- Split the data into:
+  - 60% Training Set  
+  - 20% Validation Set  
+  - 20% Test Set  
+- Normalized feature values to ensure consistent model input  
 
-## Model Training and Evaluation
+## 🏋️ Model Training and Evaluation
 
-Each model was trained on the training set and evaluated on the validation set using accuracy and weighted F1 score. Confusion matrix heatmaps were generated for visual performance comparison.
+Each model is trained using the training set and evaluated on the validation and test sets using:
 
-- **Logistic Regression:** Baseline model using simple linear decision boundaries.  
-- **SVC:** Support Vector Classifier with good accuracy and relatively low computational cost.  
-- **Keras MLP:** Neural network with 3 dense layers, using ReLU activations and sigmoid output for binary classification.  
-- **Deep Dense NN with Batch Normalization:** Improved deep neural network adding batch normalization layers for better training stability.  
-- **Simple LSTM:** Recurrent neural network model processing data sequences with one LSTM layer.
+- **Accuracy Score**  
+- **Weighted F1 Score**  
+- **Confusion Matrix Heatmaps** for performance visualization
 
-## Results
+### Model Summary:
 
-A summary DataFrame compiles each model’s accuracy and F1 score for easy comparison.
+- **Logistic Regression:** Serves as a simple, interpretable baseline model  
+- **SVC:** Performs well with smaller datasets and handles non-linear boundaries  
+- **Keras MLP:** Fully connected neural network with ReLU activations and sigmoid output  
+- **Deep Dense NN + BatchNorm:** Enhanced neural net using batch normalization for stable training  
+- **Simple LSTM:** Recurrent neural network for sequence-like inputs, tested for its adaptability
 
-## How to Run
+## 📈 Results
 
-1. Install required packages: `numpy`, `pandas`, `scikit-learn`, `tensorflow`, `seaborn`, and `matplotlib`.  
-2. Prepare your dataset by placing the CSV files in the working directory.  
-3. Run the notebook/script step-by-step, starting from data preprocessing to model training and evaluation.  
-4. Review the summary output for model performance and visualize confusion matrices for deeper insights.
+A summary DataFrame is generated to compare accuracy and F1 scores of each model on validation and test data. Visualizations include heatmaps of confusion matrices.
 
-## Notes
+## ▶️ How to Run
 
-- Random seeds are fixed to improve reproducibility.  
-- Heatmaps visualize confusion matrices to help understand model prediction strengths and weaknesses.  
-- The final model selection balances accuracy, F1 score, and computational efficiency.
+1. Clone this repository or download the code files  
+2. Install required libraries:  
+   ```bash
+   pip install numpy pandas scikit-learn tensorflow seaborn matplotlib
